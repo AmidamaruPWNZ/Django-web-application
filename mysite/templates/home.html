@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Hi {{name}} ))))))))</h1>
+
+<form action="add" method="post">
+    {% csrf_token %}
+    Введите первое число : <input type="text" name="num1"><br>
+    Введите второе число : <input type="text" name="num2"><br>
+    <input type="submit">
+</form>
+
+{% endblock %}

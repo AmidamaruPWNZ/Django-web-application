@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block style %}
+
+    input {
+        padding: 8px 15px;
+        border-radius: 5px !important;
+        margin: 5px 40%;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        font-size: 18px !important;
+        font-weight: 300
+    }
+
+    .button {
+        padding: 8px 50px;
+        border-radius: 5px !important;
+        margin: 10px 43%;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        font-size: 15px !important;
+        font-weight: 300
+    }
+
+{% endblock style %}
+
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Вход</title>
+</head>
+<body>
+    <form action="login" method="post">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="Логин"><br>
+        <input type="password" name="password" placeholder="Пароль"><br>
+        <input class="button" type="submit" value="Войти">
+    </form>
+  <div>
+    {% for message in messages %}
+    <script>
+      alert('{{message}}')
+    </script>
+    {% endfor %}
+  </div>
+</body>
+{% endblock content %}
+</html>
